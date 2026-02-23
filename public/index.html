@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Libros</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <main class="card">
+      <header>
+        <h1>Libros</h1>
+      </header>
+
+      <form id="form" autocomplete="off">
+        <input id="titulo" placeholder="Título" required maxlength="80" />
+        <input id="autor" placeholder="Autor" required maxlength="80" />
+        <button type="submit">Agregar</button>
+      </form>
+
+      <ul id="lista" class="lista"></ul>
+    </main>
+  </body>
+</html>
