@@ -20,7 +20,9 @@ let libros = [
     { id: 1, titulo: 'Cien Años de Soledad', autor: 'Gabriel García Márquez' },
     { id: 2, titulo: 'Don Quijote de la Mancha', autor: 'Miguel de Cervantes' },
     { id: 3, titulo: 'La Sombra del Viento', autor: 'Carlos Ruiz Zafón' }
-]
+];
+
+let nextId = libros.reduce((maxId, libro) => Math.max(maxId, libro.id), 0) + 1;
 
 // OPERACION GET: obtener todos los libros
 
@@ -34,7 +36,7 @@ app.get('/api/libros', (req, res) => {
 // Agregar un nuevo libro
 app.post('/api/libros', (req, res) => {
     const nuevoLibro = {
-        id: libros.length + 1,
+        id: nextId++,
         titulo: req.body.titulo,
         autor: req.body.autor
     };
